@@ -93,18 +93,11 @@ class Modal extends HTMLElement {
     const confirmButton = this.shadowRoot.querySelector("#confirm-btn");
     cancelButton.addEventListener("click", this._cancel.bind(this));
     confirmButton.addEventListener("click", this._confirm.bind(this));
-    // cancelButton.addEventListener('cancel', () => {
-    //   console.log('Cancel inside the component');
-    // });
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
     if (this.hasAttribute("opened")) {
       this.isOpen = true;
-      // this.shadowRoot.querySelector('#backdrop').style.opacity = 1;
-      // this.shadowRoot.querySelector('#backdrop').style.pointerEvents = 'all';
-      // this.shadowRoot.querySelector('#modal').style.opacity = 1;
-      // this.shadowRoot.querySelector('#modal').style.pointerEvents = 'all';
     } else {
       this.isOpen = false;
     }
