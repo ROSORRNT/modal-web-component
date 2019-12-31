@@ -9,6 +9,7 @@
       * {
         box-sizing: border-box;
       }
+
       body {
         margin: 2rem;
         font-family: sans-serif;
@@ -19,18 +20,27 @@
   <body>
     <rs-modal>
       <h1 slot="title">Please Confirm</h1>
-      <p slot="main">
-        With your confirmation you blablabla
-      </p>
+      <p>With your confirmation you agree to pay the full amount!</p>
     </rs-modal>
-    <p>Confirmez votre choix</p>
-    <button>Voir les détails & confirmer</button>
+    <p>Please confirm your choice.</p>
+    <button>Show Details & Confirm</button>
     <script>
-      const confirmButton = document.querySelector('button');
-      const modal = document.querySelector('rs-modal');
-      confirmButton.addEventListener('click', () => {
+      const confirmButton = document.querySelector("button");
+      const modal = document.querySelector("rs-modal");
+
+      modal.addEventListener("confirm", () => {
+        console.log("Confirmed...");
+      });
+
+      modal.addEventListener("cancel", () => {
+        console.log("Cancelled...");
+      });
+
+      confirmButton.addEventListener("click", () => {
+        //  modal.setAttribute('opened', '');
         if (!modal.isOpen) {
           modal.open();
+          console.log("Opening...");
         }
       });
     </script>
