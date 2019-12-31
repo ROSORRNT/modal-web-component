@@ -28,8 +28,10 @@
       const confirmButton = document.querySelector('button');
       const modal = document.querySelector('rs-modal');
       confirmButton.addEventListener('click', () => {
-        modal.setAttribute('opened', '')
-      })
+        if (!modal.isOpen) {
+          modal.open();
+        }
+      });
     </script>
   </body>
 </html>
