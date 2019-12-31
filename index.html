@@ -21,8 +21,15 @@
       <p>
         With your confirmation you blablabla
       </p>
-    </rs-modal>
+    </rs-modal open= >
     <p>Confirmez votre choix</p>
     <button>Voir les détails & confirmer</button>
+    <script>
+      const confirmButton = document.querySelector('button');
+      const modal = document.querySelector('rs-modal');
+      confirmButton.addEventListener('click', () => {
+        modal.setAttribute('opened', '')
+      })
+    </script>
   </body>
 </html>
